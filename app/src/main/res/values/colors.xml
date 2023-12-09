@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="onboarding_background">#1B232A</color>
+    <color name="button_orange">#FA4F09</color>
+    <color name="input_background">#161C22</color>
 </resources>
