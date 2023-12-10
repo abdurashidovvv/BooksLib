@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="40dp"
     tools:context=".presentation.onboarding_screen.OnboardingItemFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/onboarding1_img"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/onboarding_img1"
+        app:layout_constraintBottom_toTopOf="@id/onboarding1_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/onboarding1_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="Read anytime anywhere"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/onboarding1_info"
+        app:layout_constraintTop_toBottomOf="@id/onboarding1_img"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/onboarding1_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingHorizontal="30dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
+        app:layout_constraintTop_toBottomOf="@id/onboarding1_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
