@@ -12,3 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+/*
+https://www.figma.com/file/3iBJVs4YadN70d9ufPpdeE/BookRate?type=design&node-id=36-384&mode=design&t=qeSt97Mx5r6r7XVM-0
+https://github.com/abdurashidovvv/NewsApp/blob/master/app/src/main/java/uz/ilhomjon/newsapp/view/ui/MainFragment.kt
+*/
