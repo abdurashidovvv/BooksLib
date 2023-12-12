@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import uz.abdurashidov.bookapp.R
+import uz.abdurashidov.bookapp.databinding.FragmentOnboardingBinding
 import uz.abdurashidov.bookapp.databinding.FragmentOnboardingItemBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,6 +35,27 @@ class OnboardingItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        when (param1) {
+            "0" -> {
+                binding.onboarding1Title.text = OnboardingFragment.list[0].title
+                binding.onboarding1Info.text = OnboardingFragment.list[0].infoText
+                binding.onboarding1Img.setImageResource(OnboardingFragment.list[0].img)
+            }
+            "1" -> {
+                binding.onboarding1Title.text = OnboardingFragment.list[1].title
+                binding.onboarding1Info.text = OnboardingFragment.list[1].infoText
+                binding.onboarding1Img.setImageResource(OnboardingFragment.list[1].img)
+            }
+            "2" -> {
+                binding.onboarding1Title.text = OnboardingFragment.list[2].title
+                binding.onboarding1Info.text = OnboardingFragment.list[2].infoText
+                binding.onboarding1Img.setImageResource(OnboardingFragment.list[2].img)
+                FragmentOnboardingBinding.inflate(layoutInflater).apply {
+                    nextBtn.text = "Start"
+                }
+            }
+
+        }
         return binding.root
     }
 
