@@ -19,6 +19,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        val fragment = MainMenuFragment()
+        replaceFragment(fragment)
+
         binding.bottomNavView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
