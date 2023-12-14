@@ -1,14 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.main_menu.MainMenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/onboarding_background"
+        android:padding="15dp"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/topbar_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_launcher" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Dilshod Farmonov"
+            android:textColor="#8D969F"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/age"
+            app:layout_constraintLeft_toRightOf="@id/topbar_profile"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="23 yosh"
+            android:textColor="#8D969F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/fullname"
+            app:layout_constraintTop_toBottomOf="@id/fullname" />
+
+        <ImageView
+            android:id="@+id/search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/search_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/notification_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/notification_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/notification_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="#E3E8ED"
+        android:enabled="false"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="start|center_vertical"
+        android:paddingVertical="10dp"
+        android:text="Bosh sahifa"
+        android:textColor="@color/bold_text_color"
+        app:cornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_menu_icon"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/main_menu_picture"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/main_menu_info_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="BookRate - elektron va audio \nkitoblar olami"
+                android:textColor="@color/bold_text_color"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/main_menu_icon" />
+
+            <TextView
+                android:id="@+id/main_menu_info_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="Faqat biz bilan elektron kitoblarni qulay o’qing!"
+                android:textColor="@color/bold_text_color"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/main_menu_info_1" />
+
+            <LinearLayout
+                android:id="@+id/famous_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/main_menu_info_2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/famous_books"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#E3E8ED"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:paddingVertical="18dp"
+                    android:text="Eng sara kitoblar"
+                    android:textColor="#FA4F09"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/topbar" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/famous_books_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/author_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/famous_container">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/author_books"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#E3E8ED"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:paddingVertical="18dp"
+                    android:text="Eng sara kitoblar"
+                    android:textColor="#FA4F09"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/topbar" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/author_books_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/category_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/main_menu_info_2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/category_books"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#E3E8ED"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:paddingVertical="18dp"
+                    android:text="Eng sara kitoblar"
+                    android:textColor="#FA4F09"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/topbar" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/category_books_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

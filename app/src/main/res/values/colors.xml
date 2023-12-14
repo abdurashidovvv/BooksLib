@@ -6,4 +6,5 @@
     <color name="onboarding_background">#1B232A</color>
     <color name="button_orange">#FA4F09</color>
     <color name="input_background">#161C22</color>
+    <color name="bold_text_color">#4B5563</color>
 </resources>
