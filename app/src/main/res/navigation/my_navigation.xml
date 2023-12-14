@@ -24,4 +24,9 @@
         android:name="uz.abdurashidov.bookapp.presentation.homefragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/authorDetailFragment"
+        android:name="uz.abdurashidov.bookapp.presentation.author.AuthorDetailFragment"
+        android:label="fragment_author_detail"
+        tools:layout="@layout/fragment_author_detail" />
 </navigation>
