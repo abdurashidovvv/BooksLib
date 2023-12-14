@@ -163,6 +163,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingHorizontal="20dp"
+                    tools:listitem="@layout/book_list_rv_item"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="2" />
             </LinearLayout>
@@ -198,6 +199,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingHorizontal="20dp"
+                    tools:listitem="@layout/author_item_rv"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="2" />
             </LinearLayout>
@@ -233,6 +235,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingHorizontal="20dp"
+                    tools:listitem="@layout/book_list_rv_item"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="2" />
             </LinearLayout>

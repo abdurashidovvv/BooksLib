@@ -1,4 +1,4 @@
-package uz.abdurashidov.bookapp.domain.model
+package uz.abdurashidov.bookapp.domain.model.author_response
 
 data class Category(
     val id: Int,
