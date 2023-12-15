@@ -4,7 +4,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import uz.abdurashidov.bookapp.databinding.BookListRvItemBinding
-import uz.abdurashidov.bookapp.domain.model.book_list_response.BookListResponse
 import uz.abdurashidov.bookapp.domain.model.book_list_response.Data
 
 class BookListAdapter(val list: List<Data>, val rvClick: RvClick) :
@@ -15,6 +14,8 @@ class BookListAdapter(val list: List<Data>, val rvClick: RvClick) :
             itemRv.bookListItemName.text = book.name
             Picasso.get().load(Uri.parse("${book.photo}")).into(itemRv.bookImg)
             itemRv.bookListItemAuthor.text = book.author.fullname
+            itemRv.likesCount.text = book.likes_count.toString()
+            itemRv.storageCount.text = book.storage_count.toString()
         }
     }
 

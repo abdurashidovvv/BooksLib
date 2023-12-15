@@ -1,3 +1,5 @@
 package uz.abdurashidov.bookapp.domain.model.author_response
 
-class AuthorResponse : ArrayList<AuthorResponseItem>()
+data class AuthorResponse(
+    val `data`: List<Data>
+)

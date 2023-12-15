@@ -5,20 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import uz.abdurashidov.bookapp.databinding.AuthorItemRvBinding
-import uz.abdurashidov.bookapp.domain.model.author_response.AuthorResponseItem
+import uz.abdurashidov.bookapp.domain.model.author_response.Data
 
 class AuthorAdapter(
-    val list: ArrayList<AuthorResponseItem>,
+    val list: ArrayList<Data>,
     val authorOnClickInterface: AuthorOnClickInterface
 ) :
     RecyclerView.Adapter<AuthorAdapter.Vh>() {
 
     inner class Vh(val itemRv: AuthorItemRvBinding) : ViewHolder(itemRv.root) {
-        fun onBind(authorResponseItem: AuthorResponseItem) {
-            itemRv.authorItemName.text = authorResponseItem.fullName
+        fun onBind(authorResponseItem: Data) {
+            itemRv.authorItemName.text = authorResponseItem.fullname
             if (authorResponseItem.death_date != null) {
                 "${
-                    authorResponseItem.birth_date.substring(
+                    authorResponseItem.birthday_date.substring(
                         0,
                         5
                     )
@@ -27,12 +27,14 @@ class AuthorAdapter(
                 }".also { itemRv.authorDate.text = it }
             } else {
                 "${
-                    authorResponseItem.birth_date.substring(
+                    authorResponseItem.birthday_date.substring(
                         0,
                         5
                     )
                 }Now".also { itemRv.authorDate.text = it }
             }
+
+            itemRv.bookCount.text = authorResponseItem.books.size.toString()
 
             itemRv.root.setOnClickListener {
                 authorOnClickInterface.AuthorOnClick(authorResponseItem)
@@ -53,6 +55,6 @@ class AuthorAdapter(
     }
 
     interface AuthorOnClickInterface {
-        fun AuthorOnClick(authorResponseItem: AuthorResponseItem)
+        fun AuthorOnClick(authorResponseItem: Data)
     }
 }
