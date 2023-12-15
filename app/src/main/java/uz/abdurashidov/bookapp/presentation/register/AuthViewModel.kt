@@ -16,19 +16,20 @@ class AuthViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : ViewModel() {
 
-    private val _registerFlow = MutableStateFlow<Resource<GetTokenResponse?>>(Resource.Loading())
-    val registerFlow = _registerFlow.value
+    private val registerFlow = MutableStateFlow<Resource<GetTokenResponse?>>(Resource.Loading())
+
     suspend fun register(
         getTokenData: GetTokenData
-    ) {
+    ): MutableStateFlow<Resource<GetTokenResponse?>> {
         coroutineScope {
             authRepository.register(getTokenData).collect {
                 if (it.isSuccessful) {
-                    _registerFlow.emit(Resource.Success(it.body()))
+                    registerFlow.emit(Resource.Success(it.body()))
                 } else {
-                    _registerFlow.emit(Resource.Error(it.message(), null))
+                    registerFlow.emit(Resource.Error(it.message(), null))
                 }
             }
         }
+        return registerFlow
     }
 }

@@ -38,9 +38,7 @@ class HomeFragment : Fragment(), CoroutineScope {
         )
 
         launch {
-            authViewModel.register(getTokenData)
-            Log.d("@@@", "onCreateView: ${authViewModel.registerFlow.data}")
-        }
+            authViewModel.register(getTokenData)        }
         val fragment = MainMenuFragment()
         replaceFragment(fragment)
 

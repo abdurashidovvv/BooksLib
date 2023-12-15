@@ -1,5 +1,7 @@
 package uz.abdurashidov.bookapp.domain.model.author_response
 
+import uz.abdurashidov.bookapp.domain.model.book_list_response.SubCategory
+
 data class Book(
     val category: Category,
     val description: String,

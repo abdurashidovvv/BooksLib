@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/onboarding_background"
     android:padding="20dp"
-    tools:context=".presentation.splash_screen.SplashScreenFragment">
+    tools:context=".presentation.splash_screen.MySplashScreenFragment">
 
 
     <TextView

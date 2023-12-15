@@ -2,8 +2,11 @@ package uz.abdurashidov.bookapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import dagger.hilt.android.AndroidEntryPoint
 import uz.abdurashidov.bookapp.databinding.ActivityMainBinding
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
