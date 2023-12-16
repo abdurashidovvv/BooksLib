@@ -31,13 +31,5 @@ object AppModule {
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
-    @Provides
-    @Singleton
-    fun provideDriverRepository(
-        apiService: ApiService, @IoDispatcher ioDispatcher: CoroutineDispatcher
-    ): AuthRepository {
-        return AuthRepository(
-            apiService = apiService
-        )
-    }
+
 }

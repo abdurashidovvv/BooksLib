@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import uz.abdurashidov.bookapp.R
 import uz.abdurashidov.bookapp.databinding.FragmentMainRegisterBinding
 
+
 class MainRegisterFragment : Fragment() {
 
     private val binding by lazy { FragmentMainRegisterBinding.inflate(layoutInflater) }

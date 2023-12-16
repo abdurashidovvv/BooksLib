@@ -1,4 +1,4 @@
-package uz.abdurashidov.bookapp.domain.model.author_response
+package uz.abdurashidov.bookapp.domain.model.author_response.register
 
 import uz.abdurashidov.bookapp.domain.model.book_list_response.SubCategory
 

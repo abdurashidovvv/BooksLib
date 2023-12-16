@@ -37,8 +37,6 @@ class HomeFragment : Fragment(), CoroutineScope {
             password_confirmation = "0510"
         )
 
-        launch {
-            authViewModel.register(getTokenData)        }
         val fragment = MainMenuFragment()
         replaceFragment(fragment)
 

@@ -1,4 +1,4 @@
-package uz.abdurashidov.bookapp.domain.model.author_response
+package uz.abdurashidov.bookapp.domain.model.author_response.register
 
 data class Data(
     val birth_country: String,
