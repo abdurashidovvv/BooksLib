@@ -30,7 +30,6 @@ class AuthViewModel @Inject constructor(
         viewModelScope.launch {
 
             authRepository.register(getTokenData).collect {
-                Log.d("@@@1", "register: ${it.body()}")
                 if (it.isSuccessful) {
                     registerFlow.emit(Resource.Success(it.body()))
                 } else {

@@ -38,7 +38,7 @@ class MySplashScreenFragment : Fragment(), CoroutineScope {
         Log.d("token", "onCreateView: $token")
         val handler= Handler(Looper.getMainLooper())
         val runnable=Runnable{
-            if (token!=null){
+            if (token!=""){
                 findNavController().navigate(R.id.homeFragment)
             }else{
                 findNavController().navigate(R.id.mainRegisterFragment)
