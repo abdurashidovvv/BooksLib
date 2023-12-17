@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import uz.abdurashidov.bookapp.databinding.BookListRvItemBinding
-import uz.abdurashidov.bookapp.domain.model.book_list_response.Data
+import uz.abdurashidov.bookapp.domain.model.get_all_books_response.Data
 
 class BookListAdapter(val list: List<Data>, val rvClick: RvClick) :
     RecyclerView.Adapter<BookListAdapter.Vh>() {
@@ -12,7 +12,7 @@ class BookListAdapter(val list: List<Data>, val rvClick: RvClick) :
     inner class Vh(var itemRv: BookListRvItemBinding) : RecyclerView.ViewHolder(itemRv.root) {
         fun onBind(book: Data) {
             itemRv.bookListItemName.text = book.name
-            Picasso.get().load(Uri.parse("${book.photo}")).into(itemRv.bookImg)
+            Picasso.get().load(Uri.parse("${book.photo}")).into(itemRv.mainImg)
             itemRv.bookListItemAuthor.text = book.author.fullname
             itemRv.likesCount.text = book.likes_count.toString()
             itemRv.storageCount.text = book.storage_count.toString()

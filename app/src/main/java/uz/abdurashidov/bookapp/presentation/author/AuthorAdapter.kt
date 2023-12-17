@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import uz.abdurashidov.bookapp.databinding.AuthorItemRvBinding
-import uz.abdurashidov.bookapp.domain.model.author_response.register.Data
+import uz.abdurashidov.bookapp.domain.model.get_all_authors_reponse.Data
 
 class AuthorAdapter(
     val list: ArrayList<Data>,
